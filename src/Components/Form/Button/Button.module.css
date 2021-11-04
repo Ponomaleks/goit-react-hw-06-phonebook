@@ -1,0 +1,11 @@
+.submitBtn {
+  display: block;
+  margin: 10px;
+  font-size: 16px;
+  transition: 150ms;
+}
+
+.submitBtn:hover,
+.submitBtn:focus {
+  transform: scale(1.05);
+}
