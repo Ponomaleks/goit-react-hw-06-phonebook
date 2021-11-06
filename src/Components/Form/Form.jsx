@@ -1,17 +1,22 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import s from './Form.module.css';
-
 import Button from './Button';
 import InputName from './InputName';
 import InputTel from './InputTel';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/actions';
 
-export default function Form({ onSubmit }) {
+export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleSubmit = e => {
     e.preventDefault();
-    onSubmit({ name: name, number: number });
+    dispatch(addContact({ name, number, id: uuidv4() }));
+    // onSubmit({ name: name, number: number });
     clearForm();
   };
 
