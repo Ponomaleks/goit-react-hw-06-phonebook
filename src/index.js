@@ -10,8 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store.store}>
       <PersistGate
-        loading={null} /*отображается вместо APP пока данніе загружаются из LocalStorage */
-        // onBeforeLift={() => new Promise(resolve => setTimeout(resolve, 3000))}  /* задержкА, кот. позволит дольше показывать Loading*/
+        loading={null} /*отображается вместо APP пока данные загружаются из LocalStorage */
+        // onBeforeLift={() => new Promise(resolve => setTimeout(resolve, 3000))}  /* задержка, кот. позволит дольше показывать Loading*/
         persistor={store.persistor}
       >
         <App />
